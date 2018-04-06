@@ -32,7 +32,10 @@ export const parse = (src, defaultSrc = '') => {
 export const config = (options = {}) => {
   const src = dotenv.config(options)
   // we run this second so it doesn't override things set from src
-  const defaults = dotenv.config({ ...options, path: options.defaults || '.env.defaults' })
+  const defaults = dotenv.config({
+    ...options,
+    path: options.defaults || '.env.defaults'
+  })
 
   return merge(src, defaults)
 }
