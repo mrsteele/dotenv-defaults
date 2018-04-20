@@ -2,6 +2,13 @@
 
 A dotenv system that supports defaults
 
+### Status
+
+![npm](https://img.shields.io/npm/v/dotenv-defaults.svg)
+![David](https://img.shields.io/david/mrsteele/dotenv-defaults.svg)
+![David](https://img.shields.io/david/dev/mrsteele/dotenv-defaults.svg)
+
+
 ### Installation
 
 Use the following to install this module.
