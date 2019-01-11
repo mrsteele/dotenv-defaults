@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 
 /**
  * Merges two objects.
@@ -17,7 +17,7 @@ const merge = (apply = {}, defaults = {}) => ({
  * @param {String} [defaultSrc=''] - The new-and-improved default source.
  * @returns {Object} The parsed results.
  */
-export const parse = (src, defaultSrc = '') => {
+const parse = (src, defaultSrc = '') => {
   const parsedSrc = dotenv.parse(src)
   const parsedDefault = dotenv.parse(defaultSrc)
 
@@ -29,7 +29,7 @@ export const parse = (src, defaultSrc = '') => {
  * @param {Object} [options={}] - The options to determnie how this goes
  * @returns {Object} The parsed results.
  */
-export const config = (options = {}) => {
+const config = (options = {}) => {
   const src = dotenv.config(options)
   // we run this second so it doesn't override things set from src
   const defaults = dotenv.config({
@@ -40,4 +40,10 @@ export const config = (options = {}) => {
   return merge(src, defaults)
 }
 
-export const load = config
+const load = config
+
+module.exports = {
+  parse,
+  config,
+  load
+}

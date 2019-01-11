@@ -1,6 +1,6 @@
 /* global describe, test, expect */
 
-const Module = require('.')
+const Module = require('./index')
 
 describe('dotenv-defaults', () => {
   describe('root', () => {

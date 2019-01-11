@@ -2,10 +2,9 @@
   "name": "dotenv-defaults",
   "version": "0.0.0-development",
   "description": "dotenv... but with defaults!",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "build": "npx babel src --out-dir lib",
     "lint": "standard",
     "semantic-release": "semantic-release"
   },
@@ -27,20 +26,15 @@
     "url": "https://github.com/mrsteele/dotenv-defaults/issues"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "homepage": "https://github.com/mrsteele/dotenv-defaults#readme",
   "dependencies": {
     "dotenv": "^5.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-preset-stage-2": "^6.24.1",
-    "jest": "^22.4.3",
-    "regenerator-runtime": "^0.11.1",
-    "standard": "^11.0.1",
-    "semantic-release": "^15.1.5"
+    "jest": "^23.6.0",
+    "standard": "^12.0.1",
+    "semantic-release": "^15.13.3"
   }
 }
