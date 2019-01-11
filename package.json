@@ -31,16 +31,16 @@
   ],
   "homepage": "https://github.com/mrsteele/dotenv-defaults#readme",
   "dependencies": {
-    "dotenv": "^5.0.1"
+    "dotenv": "^6.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
+    "babel-jest": "^23.6.0",
     "babel-preset-stage-2": "^6.24.1",
-    "jest": "^22.4.3",
-    "regenerator-runtime": "^0.11.1",
-    "standard": "^11.0.1",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1",
+    "standard": "^12.0.1",
     "semantic-release": "^15.1.5"
   }
 }
