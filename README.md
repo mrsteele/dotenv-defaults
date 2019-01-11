@@ -1,5 +1,7 @@
 # dotenv-defaults
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrsteele/dotenv-defaults.svg)](https://greenkeeper.io/)
+
 A dotenv system that supports defaults
 
 ### Status
