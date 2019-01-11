@@ -25,7 +25,7 @@ describe('dotenv-defaults', () => {
     })
 
     test('should read variables', () => {
-      expect(Module.parse(`TEST=hello`)).toEqual({TEST: 'hello'})
+      expect(Module.parse(`TEST=hello`)).toEqual({ TEST: 'hello' })
     })
 
     test('should include defaults', () => {
@@ -40,7 +40,7 @@ describe('dotenv-defaults', () => {
     test('should not override defaults', () => {
       const src = `TEST=hello`
       const defaults = `TEST=goodbye`
-      expect(Module.parse(src, defaults)).toEqual({TEST: 'hello'})
+      expect(Module.parse(src, defaults)).toEqual({ TEST: 'hello' })
     })
   })
 })
