@@ -1,0 +1,21 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+node_js:
+  - '9'
+  - '8'
+  - '7'
+  - '6'
+install:
+  - npm install
+script:
+  - npm run travis
+after_script:
+  - npx codecov
+  - npx semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
