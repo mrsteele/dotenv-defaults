@@ -33,7 +33,9 @@ const config = (options = {}) => {
     path: options.defaults || '.env.defaults'
   }))
 
-  return merge(src, defaults)
+  return {
+    parsed: merge(src.parsed, defaults.parsed)
+  }
 }
 
 const load = config

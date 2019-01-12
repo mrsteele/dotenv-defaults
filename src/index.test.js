@@ -1,4 +1,4 @@
-/* global describe, test, expect */
+/* global describe, test, expect, afterEach */
 
 const Module = require('./index')
 
@@ -10,8 +10,33 @@ describe('dotenv-defaults', () => {
   })
 
   describe('config', () => {
-    test('should write some of these...', () => {
-      expect(true).toEqual(true)
+    afterEach(() => {
+      delete process.env.TEST
+      delete process.env.TEST2
+    })
+
+    test('should be a function', () => {
+      expect(typeof Module.config).toEqual('function')
+    })
+
+    test('should by default write to process.env', () => {
+      expect(Module.config()).toEqual({
+        parsed: {
+          TEST: 'hello',
+          TEST2: 'whatever'
+        }
+      })
+    })
+
+    test('should support alternative defaults', () => {
+      expect(Module.config({
+        defaults: '.env.defaults2'
+      })).toEqual({
+        parsed: {
+          TEST: 'hello',
+          TEST2: 'whatever2'
+        }
+      })
     })
   })
 
