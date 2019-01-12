@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 
 /**
  * Merges two objects.
@@ -6,10 +6,7 @@ import dotenv from 'dotenv'
  * @param {Object} defaults - The defaults to be overwritten
  * @returns {Object} The merged results.
  */
-const merge = (apply = {}, defaults = {}) => ({
-  ...defaults,
-  ...apply
-})
+const merge = (apply = {}, defaults = {}) => Object.assign({}, defaults, apply)
 
 /**
  * Parses objects like before, but with defaults!
@@ -17,7 +14,7 @@ const merge = (apply = {}, defaults = {}) => ({
  * @param {String} [defaultSrc=''] - The new-and-improved default source.
  * @returns {Object} The parsed results.
  */
-export const parse = (src, defaultSrc = '') => {
+const parse = (src, defaultSrc = '') => {
   const parsedSrc = dotenv.parse(src)
   const parsedDefault = dotenv.parse(defaultSrc)
 
@@ -29,15 +26,20 @@ export const parse = (src, defaultSrc = '') => {
  * @param {Object} [options={}] - The options to determnie how this goes
  * @returns {Object} The parsed results.
  */
-export const config = (options = {}) => {
+const config = (options = {}) => {
   const src = dotenv.config(options)
   // we run this second so it doesn't override things set from src
-  const defaults = dotenv.config({
-    ...options,
+  const defaults = dotenv.config(Object.assign({}, options, {
     path: options.defaults || '.env.defaults'
-  })
+  }))
 
   return merge(src, defaults)
 }
 
-export const load = config
+const load = config
+
+module.exports = {
+  parse,
+  config,
+  load
+}

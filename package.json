@@ -2,12 +2,11 @@
   "name": "dotenv-defaults",
   "version": "0.0.0-development",
   "description": "dotenv... but with defaults!",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "build": "npx babel src --out-dir lib",
     "lint": "standard",
-    "semantic-release": "semantic-release"
+    "travis": "npm run lint && npm t"
   },
   "repository": {
     "type": "git",
@@ -27,20 +26,18 @@
     "url": "https://github.com/mrsteele/dotenv-defaults/issues"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "homepage": "https://github.com/mrsteele/dotenv-defaults#readme",
   "dependencies": {
     "dotenv": "^6.2.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^23.6.0",
-    "babel-preset-stage-2": "^6.24.1",
     "jest": "^23.6.0",
-    "regenerator-runtime": "^0.13.1",
-    "standard": "^12.0.1",
-    "semantic-release": "^15.1.5"
+    "standard": "^12.0.1"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
