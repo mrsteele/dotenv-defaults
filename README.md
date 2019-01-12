@@ -1,14 +1,11 @@
 # dotenv-defaults
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/mrsteele/dotenv-defaults.svg)](https://greenkeeper.io/)
-
 A dotenv system that supports defaults
 
 ### Status
 
 ![npm](https://img.shields.io/npm/v/dotenv-defaults.svg)
-![David](https://img.shields.io/david/mrsteele/dotenv-defaults.svg)
-![David](https://img.shields.io/david/dev/mrsteele/dotenv-defaults.svg)
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrsteele/dotenv-defaults.svg)](https://greenkeeper.io/)
 
 
 ### Installation
