@@ -6,10 +6,7 @@ const dotenv = require('dotenv')
  * @param {Object} defaults - The defaults to be overwritten
  * @returns {Object} The merged results.
  */
-const merge = (apply = {}, defaults = {}) => ({
-  ...defaults,
-  ...apply
-})
+const merge = (apply = {}, defaults = {}) => Object.assign({}, defaults, apply)
 
 /**
  * Parses objects like before, but with defaults!
@@ -32,10 +29,9 @@ const parse = (src, defaultSrc = '') => {
 const config = (options = {}) => {
   const src = dotenv.config(options)
   // we run this second so it doesn't override things set from src
-  const defaults = dotenv.config({
-    ...options,
+  const defaults = dotenv.config(Object.assign({}, options, {
     path: options.defaults || '.env.defaults'
-  })
+  }))
 
   return merge(src, defaults)
 }
