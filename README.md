@@ -7,7 +7,6 @@ A dotenv system that supports defaults
 ![npm](https://img.shields.io/npm/v/dotenv-defaults.svg)
 [![Greenkeeper badge](https://badges.greenkeeper.io/mrsteele/dotenv-defaults.svg)](https://greenkeeper.io/)
 
-
 ### Installation
 
 Use the following to install this module.
