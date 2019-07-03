@@ -1,0 +1,14 @@
+{ "compilerOptions":
+  { "target": "es2017"
+  , "strict": true
+  , "composite": true
+  , "pretty": true
+  , "module": "commonjs"
+  , "esModuleInterop": true
+  , "declaration": true
+  , "declarationMap": true
+  , "outDir": "dist"
+  , "rootDir": "src"
+  }
+, "files": ["src/index.ts"]
+}
