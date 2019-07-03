@@ -54,3 +54,9 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Compiled output
+/dist/
+
+# Typescript build artifact
+*.tsbuildinfo
