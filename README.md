@@ -20,7 +20,7 @@ npm i dotenv-defaults --save
 This module supports all the features from the original [dotenv](https://www.npmjs.com/package/dotenv) module, so usage should be simple enough:
 
 ```
-# .env.deaults, safe to commit
+# .env.defaults, safe to commit
 HOST=website.com
 EMAIL=test@email.com
 ```
