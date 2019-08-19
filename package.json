@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "jest": "^23.6.0",
-    "standard": "^13.0.1"
+    "standard": "^14.0.0"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
