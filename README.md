@@ -35,12 +35,27 @@ The result
 ```js
 require('dotenv-defaults').config()
 
+// Or you can also load it directly like this
+require('dotenv-defaults/init')
+
 console.log(process.env.HOST)
 // Outputs: omnionline.us
 
 console.log(process.env.EMAIL)
 // Outputs: test@email.com
 ```
+
+### Using it with TypeScript
+Since this module does not provide TypeScript Type Definitions if you try to import it like `import dotenv from "dotenv-defaults"` TypeScript will return an error.
+
+Instead you should load it like this:
+```typescript
+import "dotenv-defaults/init"
+```
+
+### Using it as a CLI
+You can also call this module directly when using the node executable.
+So, for example if you are running a custom script with node and you want to load your environment variables you can do the following `node -r dotenv-defaults/init your-script.js`. (_When using this method, please make sure that you have installed dotenv-defaults with npm or yarn in the same directory_)
 
 ### Differences
 
