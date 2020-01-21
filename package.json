@@ -26,7 +26,8 @@
     "url": "https://github.com/mrsteele/dotenv-defaults/issues"
   },
   "files": [
-    "src"
+    "src",
+    "config.js"
   ],
   "homepage": "https://github.com/mrsteele/dotenv-defaults#readme",
   "dependencies": {
