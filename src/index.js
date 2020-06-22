@@ -38,10 +38,7 @@ const config = (options = {}) => {
   }
 }
 
-const load = config
-
 module.exports = {
   parse,
-  config,
-  load
+  config
 }
