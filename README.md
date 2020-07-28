@@ -5,7 +5,7 @@ A dotenv system that supports defaults
 ### Status
 
 ![npm](https://img.shields.io/npm/v/dotenv-defaults.svg)
-[![Greenkeeper badge](https://badges.greenkeeper.io/mrsteele/dotenv-defaults.svg)](https://greenkeeper.io/)
+[![dependabot badge](https://badgen.net/dependabot/mrsteele/dotenv-defaults?icon=dependabot)](https://dependabot.com/)
 
 ### Installation
 
