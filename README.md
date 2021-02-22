@@ -5,6 +5,7 @@ A dotenv system that supports defaults
 ### Status
 
 ![npm](https://img.shields.io/npm/v/dotenv-defaults.svg)
+[![Main](https://github.com/mrsteele/dotenv-defaults/actions/workflows/main.yml/badge.svg)](https://github.com/mrsteele/dotenv-defaults/actions/workflows/main.yml)
 [![dependabot badge](https://badgen.net/dependabot/mrsteele/dotenv-defaults?icon=dependabot)](https://dependabot.com/)
 
 ### Installation
