@@ -30,7 +30,7 @@
   ],
   "homepage": "https://github.com/mrsteele/dotenv-defaults#readme",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^9.0.1"
   },
   "devDependencies": {
     "jest": "^25.0.0",
