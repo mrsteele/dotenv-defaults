@@ -28,7 +28,7 @@ EMAIL=test@email.com
 
 ```
 # .env, DO NOT COMMIT
-HOST=omnionline.us
+HOST=mrsteele.dev
 ```
 
 The result
@@ -40,7 +40,7 @@ require('dotenv-defaults').config()
 require('dotenv-defaults/config')
 
 console.log(process.env.HOST)
-// Outputs: omnionline.us
+// Outputs: mrsteele.dev
 
 console.log(process.env.EMAIL)
 // Outputs: test@email.com
