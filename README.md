@@ -1,6 +1,6 @@
 # dotenv-defaults
 
-A dotenv system that supports defaults
+A dotenv system that supports defaults.
 
 ### Status
 
