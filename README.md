@@ -10,7 +10,7 @@ A dotenv system that supports defaults.
 
 ### Installation
 
-Use the following to install this module.
+Use the following to install this module:
 
 ```
 npm i dotenv-defaults --save
