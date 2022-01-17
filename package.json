@@ -1,6 +1,6 @@
 {
   "name": "dotenv-defaults",
-  "version": "0.0.0-development",
+  "version": "3.0.2",
   "description": "dotenv... but with defaults!",
   "main": "src/index.js",
   "scripts": {
