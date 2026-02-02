@@ -42,6 +42,11 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     needs: [test, lint]
+    permissions:
+      contents: write       # Required for creating releases
+      issues: write         # Required for commenting on issues
+      pull-requests: write  # Required for commenting on PRs
+      id-token: write       # Required for npm trusted publishing (OIDC)
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,6 +58,7 @@ jobs:
         with:
           node-version: 18.20.8
           cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install Dependencies
         run: npm ci
       - name: 🚀 Release
@@ -65,4 +71,3 @@ jobs:
             ]
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
