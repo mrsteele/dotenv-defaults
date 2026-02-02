@@ -38,36 +38,45 @@ jobs:
         run: npm ci
       - name: Test
         run: npm t
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    needs: [test, lint]
-    permissions:
-      contents: write       # Required for creating releases
-      issues: write         # Required for commenting on issues
-      pull-requests: write  # Required for commenting on PRs
-      id-token: write       # Required for npm trusted publishing (OIDC)
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18.20.8
-          cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
-      - name: Install Dependencies
-        run: npm ci
-      - name: 🚀 Release
-        uses: cycjimmy/semantic-release-action@v4
-        with:
-          branches: |
-            [
-              'master',
-              'main'
-            ]
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # release:
+  #   name: Release
+  #   runs-on: ubuntu-latest
+  #   needs: [test, lint]
+  #   permissions:
+  #     contents: write       # Required for creating releases
+  #     issues: write         # Required for commenting on issues
+  #     pull-requests: write  # Required for commenting on PRs
+  #     id-token: write       # Required for npm trusted publishing (OIDC)
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
+  #         persist-credentials: false
+  #     - name: Setup Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 18.20.8
+  #         cache: 'npm'
+  #         registry-url: 'https://registry.npmjs.org'
+  #     - name: Install Dependencies
+  #       run: npm ci
+  #     - name: Check npm & node versions
+  #       run: |
+  #         node -v
+  #         npm -v
+  #     - name: 🚀 Release
+  #       uses: cycjimmy/semantic-release-action@v4
+  #       with:
+  #         branches: |
+  #           [
+  #             'master',
+  #             'main'
+  #           ]
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         # Optional: if you still want to use an npm token (for compatibility),
+  #         # set the secret NPM_TOKEN in your repository secrets. When using
+  #         # npm Trusted Publishers (OIDC) this is not required for publishing,
+  #         # but some tooling may still expect it.
+  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
