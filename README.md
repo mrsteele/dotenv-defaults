@@ -34,10 +34,12 @@ HOST=mrsteele.dev
 The result
 
 ```js
-require('dotenv-defaults').config()
+// ESM (Node.js 18+)
+import { config } from 'dotenv-defaults'
+config()
 
-// Or you can also load it directly like this
-require('dotenv-defaults/config')
+// Or load it directly like this
+import 'dotenv-defaults/config'
 
 console.log(process.env.HOST)
 // Outputs: mrsteele.dev
@@ -47,16 +49,27 @@ console.log(process.env.EMAIL)
 ```
 
 ##### TypeScript
-Since this module does not provide TypeScript Type Definitions if you try to import it like `import dotenv from "dotenv-defaults"` TypeScript will return an error.
+This module now includes full TypeScript type definitions and works seamlessly with TypeScript:
 
-Instead you should load it like this:
 ```typescript
-import "dotenv-defaults/config"
+import { config, parse, type ConfigOptions } from 'dotenv-defaults'
+
+// Or load directly
+import 'dotenv-defaults/config'
+
+const options: ConfigOptions = {
+  path: './.env',
+  defaults: './.env.defaults'
+}
+
+config(options)
 ```
 
 ##### CLI
 You can also call this module directly when using the node executable.
-So, for example if you are running a custom script with node and you want to load your environment variables you can do the following `node -r dotenv-defaults/config your-script.js`. (_When using this method, please make sure that you have installed dotenv-defaults with npm or yarn in the same directory_)
+So, for example if you are running a custom script with node and you want to load your environment variables you can do the following `node --import dotenv-defaults/config your-script.js`. (_When using this method, please make sure that you have installed dotenv-defaults with npm or yarn in the same directory_)
+
+> **Note:** For Node.js versions that don't support `--import`, you can use `node --loader dotenv-defaults/config your-script.js`
 
 ### Differences
 
@@ -65,8 +78,11 @@ The only thing to note is that the original module supported an `options` argume
 This module supports that as well, but there is an added `defaults` property that can allow you to define where that file is located. An example is shown below:
 
 ```js
+// ESM
+import { config } from 'dotenv-defaults'
+
 // all of these are the default values...
-require(`dotenv-defaults`).config({
+config({
   path: './.env',
   encoding: 'utf8',
   defaults: './.env.defaults' // This is new

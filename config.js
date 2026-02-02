@@ -1,7 +1,7 @@
 // The purpose of this file is to be able to load the module with...
-//  ... "require("dotenv-defaults/config")" in JavaScript or "import "dotenv-defaults/config"" in TypeScript...
+//  ... "import "dotenv-defaults/config"" in JavaScript or TypeScript...
 //  ... or "node -r dotenv-defaults/config script.js" from the command line
 
-(function () {
-  require('./src/index').config()
-})()
+import { config } from './src/index.js'
+
+config()

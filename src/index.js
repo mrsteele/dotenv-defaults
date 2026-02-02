@@ -1,20 +1,34 @@
-const dotenv = require('dotenv')
+import dotenv from 'dotenv'
+
+/**
+ * @typedef {Object} ParsedEnv
+ * @property {Record<string, string>} [parsed]
+ */
+
+/**
+ * @typedef {Object} ConfigOptions
+ * @property {string} [path] - Path to .env file
+ * @property {string} [encoding] - Encoding of .env file
+ * @property {boolean} [debug] - Enable debug output
+ * @property {boolean} [override] - Override existing process.env variables
+ * @property {string} [defaults] - Path to .env.defaults file
+ */
 
 /**
  * Merges two objects.
- * @param {Object} apply - The overwriter
- * @param {Object} defaults - The defaults to be overwritten
- * @returns {Object} The merged results.
+ * @param {Record<string, string>} [apply={}] - The overwriter
+ * @param {Record<string, string>} [defaults={}] - The defaults to be overwritten
+ * @returns {Record<string, string>} The merged results.
  */
 const merge = (apply = {}, defaults = {}) => Object.assign({}, defaults, apply)
 
 /**
  * Parses objects like before, but with defaults!
- * @param {String} src - The original src.
- * @param {String} [defaultSrc=''] - The new-and-improved default source.
- * @returns {Object} The parsed results.
+ * @param {string | Buffer} src - The original src.
+ * @param {string | Buffer} [defaultSrc=''] - The new-and-improved default source.
+ * @returns {Record<string, string>} The parsed results.
  */
-const parse = (src, defaultSrc = '') => {
+export const parse = (src, defaultSrc = '') => {
   const parsedSrc = dotenv.parse(src)
   const parsedDefault = dotenv.parse(defaultSrc)
 
@@ -23,10 +37,10 @@ const parse = (src, defaultSrc = '') => {
 
 /**
  * Runs the configurations and applies it to process.env.
- * @param {Object} [options={}] - The options to determnie how this goes
- * @returns {Object} The parsed results.
+ * @param {ConfigOptions} [options={}] - The options to determine how this goes
+ * @returns {ParsedEnv} The parsed results.
  */
-const config = (options = {}) => {
+export const config = (options = {}) => {
   const src = dotenv.config(options)
   // we run this second so it doesn't override things set from src
   const defaults = dotenv.config(Object.assign({}, options, {
@@ -38,7 +52,7 @@ const config = (options = {}) => {
   }
 }
 
-module.exports = {
+export default {
   parse,
   config
 }

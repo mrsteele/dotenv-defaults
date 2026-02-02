@@ -1,6 +1,6 @@
 /* global describe, test, expect, afterEach */
 
-const Module = require('./index')
+import * as Module from './index.js'
 
 describe('dotenv-defaults', () => {
   describe('root', () => {
