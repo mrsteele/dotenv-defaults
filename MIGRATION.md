@@ -1,6 +1,6 @@
-# Migration Guide to v3.0.0
+# Migration Guide to v6.0.0
 
-This document outlines the breaking changes and migration steps needed to upgrade from v2.x to v3.0.0.
+This document outlines the breaking changes and migration steps needed to upgrade from v5.x to v6.0.0.
 
 ## Breaking Changes
 
@@ -18,7 +18,7 @@ This document outlines the breaking changes and migration steps needed to upgrad
 
 **Changed:** The package now uses ESM instead of CommonJS
 
-**Before (v2.x):**
+**Before (v5.x):**
 ```js
 const dotenvDefaults = require('dotenv-defaults')
 dotenvDefaults.config()
@@ -27,7 +27,7 @@ dotenvDefaults.config()
 require('dotenv-defaults/config')
 ```
 
-**After (v3.x):**
+**After (v6.x):**
 ```js
 import { config } from 'dotenv-defaults'
 config()
@@ -45,12 +45,12 @@ import 'dotenv-defaults/config'
 
 **Changed:** Node.js CLI flag for preloading
 
-**Before (v2.x):**
+**Before (v5.x):**
 ```bash
 node -r dotenv-defaults/config your-script.js
 ```
 
-**After (v3.x):**
+**After (v6.x):**
 ```bash
 node --import dotenv-defaults/config your-script.js
 ```
@@ -64,14 +64,14 @@ node --loader dotenv-defaults/config your-script.js
 
 **Changed:** The package now provides named exports
 
-**Before (v2.x):**
+**Before (v5.x):**
 ```js
 const dotenvDefaults = require('dotenv-defaults')
 dotenvDefaults.config()
 dotenvDefaults.parse()
 ```
 
-**After (v3.x):**
+**After (v6.x):**
 ```js
 import { config, parse } from 'dotenv-defaults'
 // or
@@ -129,10 +129,10 @@ The package now uses the `exports` field for better import resolution:
 
 ## Compatibility Table
 
-| Version | Node.js | Module System | TypeScript |
-|---------|---------|---------------|------------|
-| 2.x     | ≥12     | CommonJS      | ❌ (workarounds needed) |
-| 3.x     | ≥18     | ESM           | ✅ Full support |
+| Version | Node.js | Module System | TypeScript              |
+|---------|---------|---------------|-------------------------|
+| 5.x     | ≥12     | CommonJS      | ❌ (workarounds needed) |
+| 6.x     | ≥18     | ESM           | ✅ Full support         |
 
 ## Questions?
 
