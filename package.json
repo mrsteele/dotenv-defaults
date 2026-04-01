@@ -5,8 +5,18 @@
   "type": "module",
   "main": "src/index.js",
   "exports": {
-    ".": "./src/index.js",
-    "./config": "./config.js"
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./config": {
+      "types": "./config.d.ts",
+      "default": "./config.js"
+    },
+    "./config.js": {
+      "types": "./config.d.ts",
+      "default": "./config.js"
+    }
   },
   "engines": {
     "node": ">=18.0.0"
@@ -34,7 +44,8 @@
   },
   "files": [
     "src",
-    "config.js"
+    "config.js",
+    "config.d.ts"
   ],
   "types": "./src/index.d.ts",
   "homepage": "https://github.com/mrsteele/dotenv-defaults#readme",
